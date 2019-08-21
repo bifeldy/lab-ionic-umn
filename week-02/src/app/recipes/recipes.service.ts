@@ -35,9 +35,7 @@ export class RecipesService {
 
   deleteRecipe(recipeId: String) {
     for(var i=0; i < this.recipes.length; i++) {
-      if(this.recipes[i].id == recipeId) {
-        this.recipes.splice(i, 1);
-      }
+      if(this.recipes[i].id == recipeId) this.recipes.splice(i, 1);
     }
   }
 }
