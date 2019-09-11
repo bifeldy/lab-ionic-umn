@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Bookings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+          <ion-item-sliding *ngFor="let p of loadedBook" #slidingItem>
+            <ion-item-options side="start">
+              <ion-item-option (click)="deleteBook(p, slidingItem);" color="danger">
+                <ion-icon name="trash" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+            <ion-item>
+              <ion-label>
+                <h2>{{ p.placedTitle }}</h2>
+                <p>Guests: {{ p.guestNumber }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-item-sliding>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

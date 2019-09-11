@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/places/discover"></ion-back-button>
+      <ion-title>{{ loadedPlace.title }}</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="ion-padding-bottom">
+      <ion-col class="col ion-no-padding">
+        <ion-img [src]="loadedPlace.imgUrl"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding-bottom">
+      <ion-label>{{ loadedPlace.description }}</ion-label>
+    </ion-row>
+    <ion-row class="ion-padding-bottom">
+        <ion-label>{{ loadedPlace.price }}</ion-label>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="onBookPlace();">
+        <ion-icon name="bookmarks"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
