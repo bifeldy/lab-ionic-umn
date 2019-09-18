@@ -32,12 +32,13 @@ export class AppComponent {
 
       // Listen for the toggle check/uncheck to toggle the dark class on the <body>
       toggle.addEventListener('ionChange', (ev) => {
-        document.body.classList.toggle('dark', ev.detail.checked);
+        document.body.classList.toggle('dark', (ev as any).detail.checked);
       });
 
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
       // Listen for changes to the prefers-color-scheme media query
+      // tslint:disable-next-line: deprecation
       prefersDark.addListener((e) => checkToggle(e.matches));
 
       // Called when the app loads
@@ -47,7 +48,7 @@ export class AppComponent {
 
       // Called by the media query to check/uncheck the toggle
       function checkToggle(shouldCheck) {
-        toggle.checked = shouldCheck;
+        (toggle as any).checked = shouldCheck;
       }
     });
   }
