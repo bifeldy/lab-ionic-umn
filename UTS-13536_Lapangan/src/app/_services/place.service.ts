@@ -26,7 +26,7 @@ export class PlaceService {
     ),
     new Place(
       3,
-      'Galaxy Futsal',
+      'Ben\'s Stadium',
       'http://www.streetdirectory.co.id/stock_images/travel/show_resize_image.php?imageId=ind_13360389580293',
       'Bogor, Jawa Barat',
       'Futsal',
