@@ -13,5 +13,24 @@
 </ion-header>
 
 <ion-content>
-
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Title</ion-label>
+            <ion-input type="text" formControlName="title" value="{{loadedPlace.title}}"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Short Description</ion-label>
+            <ion-textarea rows="3" formControlName="description" value="{{ loadedPlace.description }}"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
